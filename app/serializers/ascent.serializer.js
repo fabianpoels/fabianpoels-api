@@ -1,4 +1,4 @@
-const allowedKeys = ['number', 'date', 'country', 'countryCode', 'area', 'city', 'crag', 'sector', 'name', 'grade', 'style']
+const allowedKeys = ['number', 'date', 'countryCode', 'area', 'city', 'crag', 'sector', 'name', 'grade', 'style']
 
 const AscentSerializer = {
   serialize: (ascent, options) => {
