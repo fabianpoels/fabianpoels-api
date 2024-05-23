@@ -7,7 +7,7 @@ const config = Object.freeze({
     url: process.env.MONGODB_URL,
     options: {},
   },
-  corsWhitelist: ['http://localhost:9000'],
+  corsWhitelist: process.env.ENV === 'development' ? ['http://localhost:9000'] : ['http://fabianpoels.com'],
 })
 
 export default config
