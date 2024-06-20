@@ -1,8 +1,6 @@
 import { app } from './app/index.js'
 import { config, logger } from './app/config/index.js'
 import mongoose from 'mongoose'
-// import fs from 'fs'
-// import csv from 'fast-csv'
 import { Ascent } from './app/models/index.js'
 
 const exitHandler = () => {
@@ -33,34 +31,6 @@ try {
 } catch (error) {
   unexpectedErrorHandler(error)
 }
-
-// const createAscent = async function(row) {
-//   const a = new Ascent({
-//     number: parseInt(row.N),
-//     date: row.Date,
-//     country: row.Country,
-//     countryCode: row.Code,
-//     area: row.Area,
-//     city: row.City,
-//     crag: row.Crag,
-//     sector: row.Sector,
-//     name: row.Name,
-//     grade: row.Grade,
-//     style: row.Style
-//   })
-//   try {
-//     await a.save()
-//   } catch (e) {
-//     console.log(row)
-//     console.error(e)
-//   }
-// }
-
-// fs.createReadStream('ascents.csv')
-//   .pipe(csv.parse({ headers: true }))
-//   .on('error', error => console.error(error))
-//   .on('data', row => createAscent(row))
-//   .on('end', rowCount => console.log(`Parsed ${rowCount} rows`))
 
 process.on('uncaughtException', unexpectedErrorHandler)
 process.on('unhandledRejection', unexpectedErrorHandler)
