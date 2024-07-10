@@ -14,7 +14,7 @@ const authMiddleware = async function (req, res, next) {
   try {
     const { user } = jwt.verify(token, config.jwtSecret)
     const dbUser = await User.findOne({ _id: user.id })
-    if (dbUser && dbUser.active && dbUser.emailVerified) {
+    if (dbUser && dbUser.active) {
       req.user = dbUser
       next()
     } else {

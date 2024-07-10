@@ -14,6 +14,10 @@ const login = async (req, res, next) => {
       active: true,
       emailVerified: true,
     }).exec()
+
+    // user.password = await User.getHashedPassword(password)
+    // await user.save()
+
     if (user && (await user.validPassword(password))) {
       // generate jwt
       const serializedUser = UserSerializer.serialize(user)

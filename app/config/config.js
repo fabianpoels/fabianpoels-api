@@ -8,6 +8,10 @@ const config = Object.freeze({
     url: process.env.MONGODB_URL,
     options: {},
   },
+  redis: {
+    host: process.env.REDIS_HOST,
+    port: process.env.REDIS_PORT,
+  },
   jwtSecret: process.env.JWT_SECRET,
   jwtExpire: '15m',
   refreshTokenExpiration: 24 * 60 * 60, // 1 day in seconds
