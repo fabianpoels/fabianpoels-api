@@ -1,7 +1,6 @@
 import { app } from './app/index.js'
 import { config, logger } from './app/config/index.js'
 import mongoose from 'mongoose'
-import { Ascent } from './app/models/index.js'
 
 const exitHandler = () => {
   if (server) {
